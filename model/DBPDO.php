@@ -2,10 +2,9 @@
 /**
  * @author Susana Fabián Antón
  * @since 13/01/2021
- * @version 15/01/2021
+ * @version 18/01/2021
  */
-
-class DBPDO {
+class DBPDO implements DB{
     /**
      * Ejecuta una consulta contra la base de datos
      * 

@@ -2,7 +2,7 @@
 /**
  * @author Susana Fabián Antón
  * @since 14/01/2021
- * @version 16/01/2021
+ * @version 18/01/2021
  */
 //constantes que contienen datos que necesitan las funciones de la libreria de validacion
 define('OBLIGATORIO', 1);
@@ -39,10 +39,11 @@ if ($entradaOK) { // si el formulario se ha rellenado y los datos son correctos
     //pedimos a la clase UsuarioPDO que valide las credenciales de usuario MODIFICACIONES PENDIENTES
     $oUsuario = UsuarioPDO::validarUsuario($aFormulario['usuario'], $aFormulario['password']);
     if(!is_null($oUsuario)) { //si existe un usuario con esas credenciales
-        $_SESSION[usuarioDAW208LoginLogoffMulticapa]=$oUsuario; //guardamos en la sesión el objeto usuario
+        $_SESSION[usuarioDAW208LoginLogoffMulticapa] = $oUsuario; //guardamos en la sesión el objeto usuario
+        $_SESSION[controladorEnCurso] = $aControladores['inicio']; //guardamos en la sesión el controlador que debe ejecutarse
         header('Location: index.php'); //enviamos al de vuelta al index
         exit;
     }
 }
-$vistaEnCurso = $aVistas['login'];
-require_once $aVistas['layout'];
+$vistaEnCurso = $aVistas['login']; //variable que contiene la vista que va a ejecutarse
+require_once $aVistas['layout']; //llamamos al layout

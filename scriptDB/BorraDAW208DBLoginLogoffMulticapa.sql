@@ -6,4 +6,4 @@
 DROP DATABASE DAW208DBLoginLogoffMulticapa;
 
 -- borramos el usuario administrador de la base de datos
-DROP USER usuarioDAW208DBLoginLogoffMulticapa;
+DROP USER usuarioDAW208DBLoginLogoff;
